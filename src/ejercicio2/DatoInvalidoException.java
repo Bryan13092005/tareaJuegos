@@ -1,6 +1,6 @@
 package ejercicio2;
 
-public class DatoInvalidoException extends Exception{
+class DatoInvalidoException extends Exception{
     public DatoInvalidoException(String mensaje){
         super(mensaje);
     }
