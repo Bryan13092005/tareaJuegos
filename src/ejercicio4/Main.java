@@ -28,8 +28,6 @@ public class Main {
                             try {
                                 CandidataEstudiante e = new CandidataEstudiante();
                                 e.pedirInformacion();
-                                candidatas.add(e);
-                                System.out.println("Candidata agregada correctamente.");
                             } catch (DatoInvalidoExcepcion | InputMismatchException ex) {
                                 System.err.println(ex.getMessage());
                             }
@@ -38,8 +36,6 @@ public class Main {
                             try {
                                 CandidataProfesional e = new CandidataProfesional();
                                 e.pedirInformacion();
-                                candidatas.add(e);
-                                System.out.println("Candidata agregada correctamente");
                             } catch (DatoInvalidoExcepcion | InputMismatchException ex) {
                                 System.err.println(ex.getMessage());
                             }
@@ -198,6 +194,7 @@ public class Main {
                                     c.votos.put("Jurado 3",rand.nextInt(100)+1);
                                     c.setPuntajeJurado();
                                 }
+                                System.out.println("Puntajes creados con exito");
                                 break;
                             case 2:
                                 System.out.print("Ingrese la cantidad de jurados: ");
@@ -245,7 +242,8 @@ public class Main {
                         }
 
                         System.out.println("LA GANADORA ES:");
-                        System.out.println(candidatas.get(0).obtenerGanadora());
+                        Candidata g=candidatas.get(0).obtenerGanadora();
+                        g.mostrarDetalles();
                         break;
                     case 7:
                         System.out.println("Saliendo...");

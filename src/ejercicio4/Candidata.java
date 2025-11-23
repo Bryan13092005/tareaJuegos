@@ -132,12 +132,12 @@ public abstract class Candidata {
 
         StringBuilder r = new StringBuilder();
 
-        // Ordenamos las claves (los números de jurado)
         List<String> keys = new ArrayList<>(votos.keySet());
         Collections.sort(keys);
 
         for (String key : keys) {
-            r.append(key)
+            r.append("\n")
+                    .append(key)
                     .append(": ")
                     .append(votos.get(key))
                     .append("/100\n");
